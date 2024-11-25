@@ -1,6 +1,12 @@
 import React from 'react'
 
 const Header = () => {
+  const sendMessage = () => {
+    const phoneNumber = '919467205499'; // Apna WhatsApp number yahan daalein
+    const message = 'Hello, I want to talk to you!'; // Apna message yahan likhen
+    const url = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank'); // Yeh link open karega WhatsApp mein
+  };
   return (
     <div>
       <div>
@@ -22,7 +28,7 @@ const Header = () => {
           I am a Web developer with 8 month of experience using HTML,CSS,JS and
           React. Reach out if you’d like to learn more!
         </p>
-        <button
+        <button onClick={sendMessage}
           style={{
             backgroundColor: 'rgb(87, 108, 188)', // camelCase property
             padding: '8px',
@@ -33,9 +39,10 @@ const Header = () => {
           }}
           
           
+          
         >
           Contact Me
-          <div></div>
+         
         </button>
         
       </div>
